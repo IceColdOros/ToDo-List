@@ -34,6 +34,7 @@ class toDoList:
             if name == taskName:
                 del Task[taskName]
                 return
+            
     def completeTask(self,taskName):
         Tasks = self.information["Incomplete Tasks"]
         completedTask = None
@@ -84,21 +85,23 @@ if __name__ == "__main__":
                 taskName = input("What is the name of the task: ")
                 taskDescription = input("Describe the task: ")
                 dateCreated = ctime()
-
                 list.addTasks(taskName,taskDescription,dateCreated)
+
             case 2:
                 task = input("What is the name of the task: ")
                 list.deleteTask(task,"Incomplete Tasks")
+
             case 3:
-                task = input("What is the name of the task you have completed?")
+                task = input("What is the name of the task you have completed? ")
                 list.completeTask(task)
 
             case 4:
                 print(list.viewTasks())
+
             case 5:
                 list.saveData()
                 print("goodbye")
                 break
+            
             case _:
                 print("invalid option")
-
